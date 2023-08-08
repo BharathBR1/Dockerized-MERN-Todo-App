@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  frontend:
+    depends_on: 
+      - backend
+    image: bharathbr1821/mern-todo-client:02
+    networks:
+      - mern-stack
+    ports:
+      - 3000:3000
+
+  backend: 
+    depends_on: 
+      - db
+    image: bharathbr1821/mern-todo-server
+    networks:
+      - mern-stack
+    ports: 
+      - 8000:8000
+    environment: 
+      DB_URL: mongodb://db/TODO-LIST
+    
+
+  db:
+    image: mongo:4.0-xenial
+    networks:
+      - mern-stack 
+    ports:
+      - 27017:27017
+    volumes:
+      - TODO-LIST:/data/db
+
+volumes:
+  TODO-LIST:
+
+networks:
+  mern-stack:
