@@ -3,13 +3,12 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const USERNAME = process.env.DB_USERNAME;
-const PASSWORD = process.env.DB_PASSWORD;
+// const USERNAME = process.env.DB_USERNAME;
+// const PASSWORD = process.env.DB_PASSWORD;
 
 const Connection = () => {
 
-    // const MONGODB_URI = `mongodb+srv://bharathbr1821:YoXzbtuhQQ0I7DOJ@imaginate.nmcangf.mongodb.net/?retryWrites=true&w=majority`;
-    const MONGODB_URI = `mongodb://db/TODO-LIST`;
+     const MONGODB_URI = `mongodb://db/TODO-LIST`;
 
 
     mongoose.connect(MONGODB_URI, { useNewUrlParser: true });

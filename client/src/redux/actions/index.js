@@ -4,6 +4,8 @@ import { ADDNEW_TODO, GETALL_TODO, TOGGLE_TODO, UPDATE_TODO, DELETE_TODO, TOGGLE
 
 const API_URL = 'http://localhost:8000';
 
+//data comes from the components todoForm
+
 export const addNewTodo = (data) => async (dispatch) => {
     try {
         const res = await axios.post(`${API_URL}/todos`, { data });
